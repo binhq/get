@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="BinHQ script downloads">
+        <meta name="author" content="Márk Sági-Kazár">
+
+        <title>BinHQ Get</title>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+
+        <style>
+            /* Move down content because we have a fixed navbar that is 50px tall */
+            body {
+                padding-top: 10rem;
+            }
+
+            #content {
+                min-height: 500px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">BinHQ Get</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="https://github.com/binhq"><i class="fa fa-github"></i> Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div id="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>BinHQ Get</h1>
+                        <p class="lead">BinHQ download scripts</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-6">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingInstructions">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseInstructions" aria-expanded="true" aria-controls="collapseInstructions">Instructions</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseInstructions" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInstructions">
+                                    <div class="panel-body">
+                                        The following instructions apply to most of the downloader scripts.
+
+                                        <br><br>
+
+                                        Download the software using the following command:
+
+                                        <pre>$ curl -sL http://get.binhq.io/SCRIPT_NAME | [PARAMS] bash</pre>
+
+                                        <strong>Note:</strong> currently this site is served over HTTP. This <strong>WILL</strong> change in the future and HTTP traffic will likely be redirected to HTTPS, hence the <code>-L</code> switch in the cURL command.
+
+                                        <br><br>
+
+                                        Parameters:
+                                        <ul>
+                                            <li><strong>VERSION:</strong> release version (eg. <code>1.0.0</code>/<code>v1.0.0</code>, default: latest)</li>
+                                            <li><strong>DEST:</strong> destination folder (default: <code>$PWD</code>)</li>
+                                            <li><strong>OS:</strong> operating system (auto-detected)</li>
+                                            <li><strong>ARCH:</strong> architecture (auto-detected)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingGithubin">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseGithubin" aria-expanded="true" aria-controls="collapseGithubin">GithuBin</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseGithubin" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingGithubin">
+                                    <div class="panel-body">
+                                        <a href="https://github.com/binhq/githubin">GithuBin</a> helps downloading binaries from Github's <a href="https://github.com/binhq/githubin/releases">Releases</a> page.
+
+                                        <br><br>
+
+                                        <pre>$ curl -sL http://get.binhq.io/githubin | bash</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; 2017 BinHQ</p>
+            </footer>
+        </div> <!-- /container -->
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
