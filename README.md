@@ -5,6 +5,11 @@ The scripts themselves try to be as similar to each other as possible,
 so that difference from a user perspective is only the name of the script.
 
 
+## Usage
+
+Please see the website for [instructions](http://get.binhq.io/#instructions)
+
+
 ## Development
 
 Since the scripts are basically the same, there is no need to edit them one by one

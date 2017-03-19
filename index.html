@@ -58,12 +58,12 @@
                     <div class="col-md-offset-3 col-md-6">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingInstructions">
+                                <div class="panel-heading" role="tab" id="instructionsHeader">
                                     <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseInstructions" aria-expanded="true" aria-controls="collapseInstructions">Instructions</a>
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#instructions" aria-expanded="true" aria-controls="instructions">Instructions</a>
                                     </h4>
                                 </div>
-                                <div id="collapseInstructions" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingInstructions">
+                                <div id="instructions" class="panel-collapse collapse" role="tabpanel" aria-labelledby="instructionsHeader">
                                     <div class="panel-body">
                                         The following instructions apply to most of the downloader scripts.
 
@@ -88,12 +88,12 @@
                                 </div>
                             </div>
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="headingGithubin">
+                                <div class="panel-heading" role="tab" id="githubinHeader">
                                     <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseGithubin" aria-expanded="true" aria-controls="collapseGithubin">GithuBin</a>
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#githubin" aria-expanded="true" aria-controls="githubin">GithuBin</a>
                                     </h4>
                                 </div>
-                                <div id="collapseGithubin" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingGithubin">
+                                <div id="githubin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="githubinHeader">
                                     <div class="panel-body">
                                         <a href="https://github.com/binhq/githubin">GithuBin</a> helps downloading binaries from Github's <a href="https://github.com/binhq/githubin/releases">Releases</a> page.
 
@@ -113,11 +113,19 @@
             <footer>
                 <p>&copy; 2017 BinHQ</p>
             </footer>
-        </div> <!-- /container -->
-
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                if(location.hash != null && location.hash != ""){
+                    $('.collapse').removeClass('in');
+                    $(location.hash + '.collapse').collapse('show');
+                }
+            });
+        </script>
     </body>
 </html>
