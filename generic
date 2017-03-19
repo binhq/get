@@ -34,6 +34,9 @@ latest_version() {
     curl -s $params | grep tag_name | cut -f4 -d'"'
 }
 
+test -z "$PROJECT_VERSION" || VERSION="$PROJECT_VERSION"
+test -z "$PROJECT_DEST" || DEST="$PROJECT_DEST"
+
 test -z "$VERSION" && VERSION="$(latest_version)"
 test -z "$VERSION" && {
     echo "Unable to get $PROJECT version." >&2

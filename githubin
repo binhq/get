@@ -34,6 +34,9 @@ latest_version() {
     curl -s $params | grep tag_name | cut -f4 -d'"'
 }
 
+test -z "$GITHUBIN_VERSION" || VERSION="$GITHUBIN_VERSION"
+test -z "$GITHUBIN_DEST" || DEST="$GITHUBIN_DEST"
+
 test -z "$VERSION" && VERSION="$(latest_version)"
 test -z "$VERSION" && {
     echo "Unable to get $PROJECT version." >&2

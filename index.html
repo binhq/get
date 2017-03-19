@@ -84,6 +84,14 @@
                                             <li><strong>OS:</strong> operating system (auto-detected)</li>
                                             <li><strong>ARCH:</strong> architecture (auto-detected)</li>
                                         </ul>
+
+                                        Project specific parameters:
+                                        <ul>
+                                            <li><strong>[PROJECTNAME]_VERSION</strong></li>
+                                            <li><strong>[PROJECTNAME]_DEST</strong></li>
+                                        </ul>
+
+                                        Project specific parameters override their general version.
                                     </div>
                                 </div>
                             </div>
@@ -100,6 +108,21 @@
                                         <br><br>
 
                                         <pre>$ curl -sL http://get.binhq.io/githubin | bash</pre>
+
+                                        <br>
+
+                                        <strong>Using in Travis CI</strong><br>
+
+                                        One of GithuBin's goals is to ease binary download in CI/CD pipelines
+                                        when you have no control over the environment (eg. in <a href="http://travis-ci.org/">Travis CI</a>).
+
+                                        <br><br>
+
+                                        <pre>
+before_install:
+    - mkdir -p $HOME/bin
+    - curl -sL http://get.binhq.io/githubin | DEST=$HOME/bin bash
+    - githubin get owner/repo version -o $HOME/bin</pre>
                                     </div>
                                 </div>
                             </div>
