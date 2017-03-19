@@ -1,0 +1,59 @@
+#!/bin/sh
+
+set -e
+
+PROJECT="githubin"
+DOWNLOAD_URL="https://github.com/binhq/$PROJECT/releases/download"
+TMP_FILE="/tmp/$PROJECT.tar.gz"
+
+test -z "$OS" && OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
+test -z "$ARCH" && {
+    ARCH="$(uname -m)"
+    case "$ARCH" in
+        "x86_64")
+            ARCH="amd64"
+            ;;
+
+        "i386")
+            ARCH="386"
+            ;;
+
+        *)
+            echo "Unable to detect arch from \"$ARCH\"." >&2
+            exit 1
+            ;;
+    esac
+}
+test -z "$DEST" && DEST="$PWD"
+test -z "$TMPDIR" && TMPDIR="$(mktemp -d)"
+
+latest_version() {
+    local header
+    test -z "$GITHUB_TOKEN" || header="-H \"Authorization: token $GITHUB_TOKEN\""
+    curl -s $header "https://api.github.com/repos/binhq/$PROJECT/releases/latest" | grep tag_name | cut -f4 -d'"'
+}
+
+test -z "$VERSION" && VERSION="$(latest_version)"
+test -z "$VERSION" && {
+    echo "Unable to get $PROJECT version." >&2
+    exit 1
+}
+
+[ "${VERSION:0:1}" != "v" ] && VERSION="v$VERSION"
+
+rm -f "$TMP_FILE"
+
+set +e
+
+URL="$DOWNLOAD_URL/$VERSION/${PROJECT}_${OS}_$ARCH.tar.gz"
+curl -s -f -L -o "$TMP_FILE" "$URL"
+
+[ $? -ne 0 ] && {
+    echo "Failed to download $PROJECT from URL $URL." >&2
+    exit 2
+}
+
+set -e
+
+tar -xf "$TMP_FILE" -C "$TMPDIR"
+mv "$TMPDIR/$PROJECT" "$DEST"
