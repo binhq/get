@@ -28,10 +28,10 @@ test -z "$DEST" && DEST="$PWD"
 test -z "$TMPDIR" && TMPDIR="$(mktemp -d)"
 
 latest_version() {
-    local params
-    test -z "$GITHUB_TOKEN" || params="-H \"Authorization: token $GITHUB_TOKEN\""
-    params="$params https://api.github.com/repos/binhq/$PROJECT/releases/latest"
-    curl -s $params | grep tag_name | cut -f4 -d'"'
+    local args=()
+    test -z "$GITHUB_TOKEN" || header+=("-H \"Authorization: token $GITHUB_TOKEN\"")
+    args+=("https://api.github.com/repos/binhq/$PROJECT/releases/latest")
+    curl -s "${args[@]}" | grep tag_name | cut -f4 -d'"'
 }
 
 test -z "$PROJECT_VERSION" || VERSION="$PROJECT_VERSION"
