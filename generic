@@ -29,7 +29,7 @@ test -z "$TMPDIR" && TMPDIR="$(mktemp -d)"
 
 latest_version() {
     local args=()
-    test -z "$GITHUB_TOKEN" || header+=("-H \"Authorization: token $GITHUB_TOKEN\"")
+    test -z "$GITHUB_TOKEN" || args+=("-HAuthorization: token $GITHUB_TOKEN")
     args+=("https://api.github.com/repos/binhq/$PROJECT/releases/latest")
     curl -s "${args[@]}" | grep tag_name | cut -f4 -d'"'
 }
