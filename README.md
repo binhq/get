@@ -7,7 +7,7 @@ so that difference from a user perspective is only the name of the script.
 
 ## Usage
 
-Please see the website for [instructions](http://get.binhq.io/#instructions)
+Please see the website for [instructions](https://get.binhq.io/#instructions)
 
 
 ## Development
