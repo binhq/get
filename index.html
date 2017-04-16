@@ -71,9 +71,9 @@
 
                                         Download the software using the following command:
 
-                                        <pre>$ curl -sL http://get.binhq.io/SCRIPT_NAME | [PARAMS] bash</pre>
+                                        <pre>$ curl -sL https://get.binhq.io/SCRIPT_NAME | [PARAMS] bash</pre>
 
-                                        <strong>Note:</strong> currently this site is served over HTTP. This <strong>WILL</strong> change in the future and HTTP traffic will likely be redirected to HTTPS, hence the <code>-L</code> switch in the cURL command.
+                                        <strong>Note:</strong> this site used to be served over HTTP. This has changed recently and HTTP is now redirected to HTTPS, hence the <code>-L</code> switch in the cURL command.
 
                                         <br><br>
 
@@ -107,7 +107,7 @@
 
                                         <br><br>
 
-                                        <pre>$ curl -sL http://get.binhq.io/githubin | bash</pre>
+                                        <pre>$ curl -sL https://get.binhq.io/githubin | bash</pre>
 
                                         <br>
 
@@ -121,7 +121,7 @@
                                         <pre>
 before_install:
     - mkdir -p $HOME/bin
-    - curl -sL http://get.binhq.io/githubin | DEST=$HOME/bin bash
+    - curl -sL https://get.binhq.io/githubin | DEST=$HOME/bin bash
     - githubin get owner/repo version -o $HOME/bin</pre>
                                     </div>
                                 </div>
@@ -134,7 +134,10 @@ before_install:
             <hr>
 
             <footer>
-                <p>&copy; 2017 BinHQ</p>
+                <span>&copy; 2017 BinHQ</span>
+                <a class="pull-right" href="https://www.netlify.com">
+                    <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg">
+                </a>
             </footer>
         </div>
 
