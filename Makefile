@@ -10,7 +10,7 @@ dist: # Copy all files for hosting to the public directory
 	@rm -rf dist
 	@mkdir -p dist
 	@cp index.html dist/
-	@cp githubin generic dist/
+	@cp gitbin generic dist/
 
 help:
 	@grep -h -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

@@ -96,24 +96,24 @@
                                 </div>
                             </div>
                             <div class="panel panel-default">
-                                <div class="panel-heading" role="tab" id="githubinHeader">
+                                <div class="panel-heading" role="tab" id="gitbinHeader">
                                     <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#githubin" aria-expanded="true" aria-controls="githubin">GithuBin</a>
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#gitbin" aria-expanded="true" aria-controls="gitbin">GitBin</a>
                                     </h4>
                                 </div>
-                                <div id="githubin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="githubinHeader">
+                                <div id="gitbin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="gitbinHeader">
                                     <div class="panel-body">
-                                        <a href="https://github.com/binhq/githubin">GithuBin</a> helps downloading binaries from Github's <a href="https://github.com/binhq/githubin/releases">Releases</a> page.
+                                        <a href="https://github.com/binhq/gitbin">GitBin</a> helps downloading binaries from Github's <a href="https://github.com/binhq/gitbin/releases">Releases</a> page.
 
                                         <br><br>
 
-                                        <pre>$ curl -sL https://get.binhq.io/githubin | bash</pre>
+                                        <pre>$ curl -sL https://get.binhq.io/gitbin | bash</pre>
 
                                         <br>
 
                                         <strong>Travis CI config</strong><br>
 
-                                        One of GithuBin's goals is to ease binary download in CI/CD pipelines
+                                        One of GitBin's goals is to ease binary download in CI/CD pipelines
                                         when you have no control over the environment (eg. in case of <a href="http://travis-ci.org/">Travis CI</a>).
 
                                         <br><br>
@@ -121,8 +121,8 @@
                                         <pre>
 before_install:
     - mkdir -p $HOME/bin
-    - curl -sL https://get.binhq.io/githubin | DEST=$HOME/bin bash
-    - githubin get owner/repo version -o $HOME/bin</pre>
+    - curl -sL https://get.binhq.io/gitbin | DEST=$HOME/bin bash
+    - gitbin get owner/repo version -o $HOME/bin</pre>
                                     </div>
                                 </div>
                             </div>
