@@ -12,7 +12,7 @@ for project in $PROJECTS; do
     printf "\033[36m%-15s\033[0m" "$project"
     sed -e "s/^#PROJECT.*/PROJECT=\"$project\"/g" \
         -e "s/\$PROJECT_/\$$(echo $project | tr '[:lower:]' '[:upper:]')_/g" \
-        generic > $project
+        generic > "scripts/$project"
 
     if [ $? -ne 0 ]; then
         errors=$errors+1
