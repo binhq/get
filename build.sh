@@ -2,7 +2,7 @@
 
 # Build project scripts from the generic one
 
-PROJECTS="gitbin"
+PROJECTS="gitbin binbrew"
 
 echo "Building download scripts\n"
 

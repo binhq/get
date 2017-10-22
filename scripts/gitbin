@@ -26,6 +26,7 @@ test -z "$ARCH" && {
 }
 test -z "$DEST" && DEST="$PWD"
 test -z "$TMPDIR" && TMPDIR="$(mktemp -d)"
+test -z "$NAME" && NAME="$PROJECT"
 
 latest_version() {
     local args=()
@@ -36,6 +37,7 @@ latest_version() {
 
 test -z "$GITBIN_VERSION" || VERSION="$GITBIN_VERSION"
 test -z "$GITBIN_DEST" || DEST="$GITBIN_DEST"
+test -z "$GITBIN_NAME" || NAME="$GITBIN_NAME"
 
 test -z "$VERSION" && VERSION="$(latest_version)"
 test -z "$VERSION" && {
@@ -60,4 +62,4 @@ curl -s -f -L -o "$TMP_FILE" "$URL"
 set -e
 
 tar -xf "$TMP_FILE" -C "$TMPDIR"
-mv "$TMPDIR/$PROJECT" "$DEST"
+mv "$TMPDIR/$PROJECT" "$DEST/$NAME"

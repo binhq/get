@@ -2,7 +2,7 @@
 
 set -e
 
-#PROJECT="PROJECT NAME"
+PROJECT="binbrew"
 DOWNLOAD_URL="https://github.com/binhq/$PROJECT/releases/download"
 TMP_FILE="/tmp/$PROJECT.tar.gz"
 
@@ -35,9 +35,9 @@ latest_version() {
     curl -s "${args[@]}" | grep tag_name | cut -f4 -d'"'
 }
 
-test -z "$PROJECT_VERSION" || VERSION="$PROJECT_VERSION"
-test -z "$PROJECT_DEST" || DEST="$PROJECT_DEST"
-test -z "$PROJECT_NAME" || NAME="$PROJECT_NAME"
+test -z "$BINBREW_VERSION" || VERSION="$BINBREW_VERSION"
+test -z "$BINBREW_DEST" || DEST="$BINBREW_DEST"
+test -z "$BINBREW_NAME" || NAME="$BINBREW_NAME"
 
 test -z "$VERSION" && VERSION="$(latest_version)"
 test -z "$VERSION" && {

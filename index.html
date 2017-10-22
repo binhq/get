@@ -95,10 +95,45 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="binbrewHeader">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#binbrew" aria-expanded="true" aria-controls="binbrew">binbrew</a>
+                                    </h4>
+                                </div>
+                                <div id="binbrew" class="panel-collapse collapse" role="tabpanel" aria-labelledby="binbrewHeader">
+                                    <div class="panel-body">
+                                        <a href="https://github.com/binhq/binbrew">binbrew</a> is the binary package manager
+                                        that helps downloading binaries all kinds of sources
+                                        (like Github's <a href="https://github.com/binhq/binbrew/releases">Releases</a> page).
+
+                                        <br><br>
+
+                                        <pre>$ curl -sL https://get.binhq.io/binbrew | bash</pre>
+
+                                        <br>
+
+                                        <strong>Travis CI config</strong><br>
+
+                                        One of binbrew's goals is to ease binary download in CI/CD pipelines
+                                        when you have no control over the environment (eg. in case of <a href="http://travis-ci.org/">Travis CI</a>).
+
+                                        <br><br>
+
+                                        <pre>
+before_install:
+    - mkdir -p $HOME/bin
+    - curl -sL https://get.binhq.io/binbrew | DEST=$HOME/bin NAME=bin bash
+    - bin get owner/repo@version $HOME/bin</pre>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="panel panel-default">
                                 <div class="panel-heading" role="tab" id="gitbinHeader">
                                     <h4 class="panel-title">
-                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#gitbin" aria-expanded="true" aria-controls="gitbin">GitBin</a>
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#gitbin" aria-expanded="true" aria-controls="gitbin">GitBin (deprecated)</a>
                                     </h4>
                                 </div>
                                 <div id="gitbin" class="panel-collapse collapse" role="tabpanel" aria-labelledby="gitbinHeader">
